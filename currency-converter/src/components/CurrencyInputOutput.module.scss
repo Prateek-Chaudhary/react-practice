@@ -1,0 +1,35 @@
+.currencyBox {
+  padding: 1vh 2vw;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.108);
+  box-shadow: 0px 0px 10px white;
+
+  .conversionTag {
+
+    span {
+      font-size: x-large;
+    }
+
+    margin: 1vh 0vw;
+  }
+
+  .conversion {
+    input {
+      font-size: larger;
+      outline: none;
+      border-radius: 5px;
+      padding: 0.8vh 0.5vw;
+      width: 12vw;
+      margin: 1vh 0.5vw 1vh 0vw;
+    }
+
+    select {
+      font-size: larger;
+      outline: none;
+      border-radius: 5px;
+      padding: 0.8vh 0.5vw;
+      width: 7vw;
+      margin: 1vh 0vw 1vh 0.5vw;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@mixin displayFlex() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navBtn {
+  @include displayFlex();
+  border-radius: 5px;
+  width: 4.5rem;
+  height: 2rem;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  color: white;
+  z-index: 1;
+  transition: color;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: transparent;
+    border-radius: 5px;
+    z-index: 0;
+    transform: scale(0.5);
+    transition: background-color 0.5s ease, transform 0.5s ease;
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: rgb(171, 0, 0);
+  }
+
+  &:hover::before {
+    background-color: rgba(135, 0, 0, 0.222);
+    transform: scale(1);
+  }
+}

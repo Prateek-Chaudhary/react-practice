@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+nav {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.netflixLogo {
+  align-self: self-end;
+}
+
+.netflixLogo > svg {
+  fill: red;
+  width: 10vw;
+  height: 5vh;
+}
+
+.langOrSignIn {
+  display: flex;
+  width: 17vw;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.lang {
+  border: 1px solid white;
+  border-radius: 3px;
+  display: flex;
+  background-color: rgba(44, 44, 44, 0.556);
+  align-items: center;
+  padding: 0px 0.3vw 0px 0.6vw;
+}
+
+.langLogo > svg {
+  width: 1.3vw;
+  height: 1.3vw;
+  padding-right: 0.5vw;
+}
+
+.lang > select {
+  width: 6.5vw;
+  height: 4vh;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: large;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 6 5-6H0z' fill='%23ffffff'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  outline: none;
+}
+
+.lang > select > option {
+  color: black;
+  width: 10vw;
+}
+
+.signIn > button {
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 700;
+  padding: 1vh 1.3vw;
+}
+
+.signIn > button:hover {
+  cursor: pointer;
+  background-color: rgb(206, 0, 0);
+}
+
+.mainFrame {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainFrame::before {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url("IN-en-20250616-TRIFECTA-perspective_9cbc87b2-d9bb-4fa8-9f8f-a4fe8fc72545_large.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.mainFrame > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.mainFrame > div:nth-child(2) {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: x-large;
+  font-weight: 600;
+  line-height: 10vh;
+}
+
+.mainFrame > div:nth-child(3) {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.08rem;
+  font-weight: 400;
+  line-height: 5vh;
+}
+
+.emailButton {
+  width: 40vw;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1vh;
+}
+
+.emailButton > input {
+  background-color: rgba(20, 20, 20, 0.747);
+  border: 1px solid white;
+  color: white;
+  outline: none;
+  width: 22vw;
+  height: 8vh;
+  border-radius: 5px;
+  font-size: large;
+  padding-left: 1vw;
+}
+
+.emailButton > input::placeholder {
+  color: rgb(200, 200, 200);
+}
+
+.emailButton > input::selection {
+  background-color: rgba(20, 20, 20, 0.747);
+  color: white;
+}
+
+.emailButton > button {
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: x-large;
+  font-weight: 600;
+  width: 14vw;
+  height: 8vh;
+}
+
+.emailButton > button:hover {
+  cursor: pointer;
+  background-color: rgb(206, 0, 0);
+}
+
+.ellipse {
+  border-top: 2px solid transparent;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  position: relative;
+  top: -5vh;
+  background-image: linear-gradient(to right, transparent, red, red, transparent);
+}
+
+.innerEllipse {
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  background-color: black;
+  margin-top: 4px;
+  height: 10vh;
+}

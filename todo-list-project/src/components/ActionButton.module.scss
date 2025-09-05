@@ -1,0 +1,29 @@
+.greenStyle {
+  border: none;
+  background-color: green;
+  color: white;
+  width: 10vw;
+  font-size: x-large;
+  padding: 1vh 0vw;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(0, 106, 0);
+  }
+}
+
+.redStyle {
+  border: none;
+  background-color: red;
+  color: white;
+  width: 10vw;
+  font-size: x-large;
+  padding: 1vh 0vw;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(175, 0, 0);
+  }
+}

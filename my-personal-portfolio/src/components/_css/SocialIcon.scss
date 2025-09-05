@@ -1,0 +1,44 @@
+@mixin flexBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialIcons {
+  display: flex;
+  width: fit-content;
+
+  .social {
+    margin: 1vh 0.5vw;
+  }
+}
+
+.socialIcon {
+  @include flexBox();
+  border-radius: 50%;
+  position: relative;
+  width: fit-content;
+  padding: 0.8rem;
+  z-index: 1;
+  background-color: rgba(114, 114, 114, 0.251);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: transparent;
+    border-radius: 50%;
+    z-index: -1;
+    transform: scale(0.3);
+    transition: background-color 0.5s ease, transform 0.5s ease;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+    background-color: red;
+  }
+}

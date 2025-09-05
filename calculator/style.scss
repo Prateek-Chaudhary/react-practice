@@ -1,0 +1,95 @@
+@import "resets";
+@import "variables";
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin padding-round {
+  border-radius: 20px;
+  padding: 1rem 1rem;
+}
+
+.calculator {
+  @include flex-center();
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to right, $blue-bg1, $blue-bg2);
+
+  &_box {
+    @include padding-round();
+    background-color: white;
+  }
+
+  &_screen {
+    @include padding-round();
+    text-align: end;
+    border: none;
+    outline: none;
+    font-size: xx-large;
+    font-weight: 700;
+    color: rgb(70, 70, 70);
+    width: 30vw;
+    height: 10vh;
+    box-shadow: inset 0px 0px 5px rgb(194, 194, 194);
+  }
+
+  &_buttons {
+    margin-top: 2vh;
+    width: 30vw;
+    display: flex;
+    align-items: flex-start;
+    gap: 3vh 1vw;
+    flex-wrap: wrap;
+  }
+}
+
+.calc_btn {
+  font-size: 4rem;
+  // padding: 1vh 2vw;
+  width: 6.7vw;
+  height: 11vh;
+  text-align: center;
+  font-weight: bolder;
+  border-radius: 10px;
+  cursor: pointer;
+
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i}) {
+      background-color: $light-yellow;
+    }
+  }
+
+  @for $i from 5 through 15 {
+    &:nth-child(#{$i}) {
+      background-color: $light-blue;
+    }
+  }
+
+  &:nth-child(3) {
+    padding-top: 1.5vh;
+  }
+
+  &:nth-last-child(2) {
+    padding-top: 2vh;
+  }
+
+  &:last-child {
+    background-color: $light-red;
+  }
+}
+
+.calculate > span {
+  margin-top: 2vh;
+  display: inline-block;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bolder;
+  background-color: $light-green;
+  color: white;
+  width: 14vw;
+  border-radius: 10px;
+  cursor: pointer;
+}

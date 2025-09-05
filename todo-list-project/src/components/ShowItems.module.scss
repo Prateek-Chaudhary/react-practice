@@ -1,0 +1,19 @@
+@mixin displayFlexMiddle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.allItems {
+    @include displayFlexMiddle();
+    justify-content: space-between;
+    width: 40vw;
+    margin-bottom: 2vh;
+
+    div > p {
+      font-size: x-large;
+      font-weight: 600;
+      color: rgb(0, 82, 88);
+      font-family: 'Courier New', Courier, monospace;
+    }
+  }

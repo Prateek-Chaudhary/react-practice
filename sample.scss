@@ -1,0 +1,53 @@
+@import "./resets";
+@import "./variables";
+
+@function getFontWeight($font-name) {
+  @return map-get($map: $weights, $key: $font-name);
+}
+
+@mixin displayFlex($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin theme($light-theme: true) {
+  @if $light-theme {
+    background-color: lighten(blue, 20%);
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $max) {
+    // passed content will be injected here.....
+    @content;
+  }
+}
+
+body {
+  background-color: $ternary-color;
+  @include theme(true);
+}
+
+.heading {
+  @include displayFlex(row);
+  color: $secondary-color;
+  font-size: xx-large;
+  font-weight: getFontWeight(bold);
+
+  #{&}_data1 {
+    color: $primary-color;
+    font-size: larger;
+    font-weight: getFontWeight(bold)
+  }
+
+  &_data2 {
+    // it will extends all the properties of the .heading_data1;
+    @extend .heading_data1;
+  }
+
+  &:hover {
+    background-color: gold;
+  }
+}
