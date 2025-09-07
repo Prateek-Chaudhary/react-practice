@@ -1,28 +1,42 @@
-import { useEffect, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import CurrencyCss from "./CurrencyInputOutput.module.scss";
 
-export default function CurrencyInputOutput({ boxType }) {
-  let [currencyList, setCurrencyList] = useState(["inr", "usd"]);
-
-  useEffect(() => {}, []);
+export default function CurrencyInputOutput({
+  amount,
+  onAmountChange,
+  currency,
+  onCurrencyChange,
+  label,
+  currencyList = [],
+  className,
+}) {
+  let labelId = useId();
 
   return (
     <>
       <div className={CurrencyCss.currencyBox}>
         <div className={CurrencyCss.conversionTag}>
-          <span>{boxType}</span>
+          <label htmlFor={labelId}>{label}</label>
         </div>
         <div className={CurrencyCss.conversion}>
           <input
+            value={amount}
+            id={labelId}
             type="text"
             name="currencyValue"
-            id={CurrencyCss.currencyValue}
+            className={CurrencyCss.currencyValue}
+            onChange={(e) => onAmountChange(Number(e.target.value))}
           />
-          <select name="currencies" id={CurrencyCss.currencyList}>
+          <select
+            name="currencies"
+            id={CurrencyCss.currencyList}
+            value={currency}
+            onChange={(e) => onCurrencyChange(e.target.value)}
+          >
             {currencyList.map((currencyName) => {
               return (
                 <option value={currencyName} key={currencyName}>
-                  {currencyName.toUpperCase()}
+                  {currencyName}
                 </option>
               );
             })}
