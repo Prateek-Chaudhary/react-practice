@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState } from "react";
+import { useId } from "react";
 import CurrencyCss from "./CurrencyInputOutput.module.scss";
 
 export default function CurrencyInputOutput({
@@ -8,6 +8,7 @@ export default function CurrencyInputOutput({
   onCurrencyChange,
   label,
   currencyList = [],
+  onlyRead = false,
   className,
 }) {
   let labelId = useId();
@@ -25,7 +26,8 @@ export default function CurrencyInputOutput({
             type="text"
             name="currencyValue"
             className={CurrencyCss.currencyValue}
-            onChange={(e) => onAmountChange(Number(e.target.value))}
+            onChange={(e) => onAmountChange(e.target.value)}
+            readOnly={onlyRead}
           />
           <select
             name="currencies"

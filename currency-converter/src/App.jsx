@@ -5,7 +5,8 @@ import "./styles/App.scss";
 
 function App() {
 
-  let [amount, setAmount] = useState(0);
+  let [fromAmount, setFromAmount] = useState();
+  let [toAmount, setToAmount] = useState();
   let [from, setFrom] = useState("INR");
   let [to, setTo] = useState("USD");
   let [currencyListWithValue, setCurrencyListWithValue] = useState({});
@@ -21,6 +22,28 @@ function App() {
     setCurrencyList(Object.keys(currencyListWithValue));
   }, [currencyListWithValue]);
 
+  let onFromAmountChange = (money) => {
+    setFromAmount(money);
+  }
+
+  let onToAmountChange = (money) => {
+    setToAmount(money);
+  }
+
+  let onFromCurrencyChange = (currency) => {
+    setFrom(currency);
+  }
+
+  let onToCurrencyChange = (currency) => {
+    setTo(currency);
+  }
+
+  let calculateAns = () => {
+    let toValue = Number(currencyListWithValue[to]);
+    let ans = toValue * Number(fromAmount);
+    setToAmount(ans);
+  }
+
   return (
     <>
       <div className="mainBox">
@@ -30,7 +53,9 @@ function App() {
         <div className="converter">
           <div className="fromBox">
             <CurrencyInputOutput
-              amount={amount}
+              amount={fromAmount === undefined ? "" : fromAmount}
+              onAmountChange={onFromAmountChange}
+              onCurrencyChange={onFromCurrencyChange}
               label={"From"}
               currency={from}
               currencyList={currencyList}
@@ -41,12 +66,18 @@ function App() {
           </div>
           <div className="toBox">
             <CurrencyInputOutput
-              amount={amount}
+              amount={toAmount === undefined ? "" : toAmount}
+              onAmountChange={onToAmountChange}
+              onCurrencyChange={onToCurrencyChange}
+              onlyRead={true}
               label={"To"}
               currency={to}
               currencyList={currencyList}
             />
           </div>
+        </div>
+        <div className="calculateButton">
+          <button className="calcBtn" onClick={calculateAns}>Calculate</button>
         </div>
       </div>
     </>
