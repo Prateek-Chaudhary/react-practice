@@ -7,8 +7,8 @@ function App() {
 
   let [fromAmount, setFromAmount] = useState();
   let [toAmount, setToAmount] = useState();
-  let [from, setFrom] = useState("INR");
-  let [to, setTo] = useState("USD");
+  let [from, setFrom] = useState("USD");
+  let [to, setTo] = useState("INR");
   let [currencyListWithValue, setCurrencyListWithValue] = useState({});
   let [currencyList, setCurrencyList] = useState([]);
 

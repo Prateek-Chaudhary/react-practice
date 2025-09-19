@@ -1,0 +1,29 @@
+@mixin displayFlexIcon() {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logoContainer {
+  border: 2px solid greenyellow;
+  width: 18vw;
+  @include displayFlexIcon();
+
+  .logo {
+  }
+
+  .myName {
+    & > label {
+      font-size: x-large;
+      font-weight: bold;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+      background: linear-gradient(45deg, rgb(177, 0, 0), rgb(255, 120, 120));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% 200%;
+      background-position: var(--pos, 50%) 50%;
+      transition: background-position 0.2s ease;
+    }
+  }
+}

@@ -1,19 +1,16 @@
-import Hamburger from "../../components/Hamburger";
-import SocialIcons from "../../components/SocialIcons";
-import MyLogo from "./../../components/MyLogo";
-import NavButton from "./../../components/NavButton";
+import React from 'react';
+import MyLogo from '../../components/MyLogo';
 
 function NavBar() {
-
-  let menuButtons = ["Home", "About Me", "Services", "Projects", "Contact Us"];
-
   return (
-    <>
-      <div className="navigation">
+    <div>
+      <div className="logoWithName">
         <MyLogo />
       </div>
-    </>
-  );
+      <div className="navLinks"></div>
+      <div className="socialIcons"></div>
+    </div>
+  )
 }
 
 export default NavBar;
