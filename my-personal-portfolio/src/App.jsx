@@ -1,10 +1,11 @@
-import NavBar from "./layouts/header/NavBar";
+import Header from "./layouts/header/Header";
 import "./styles/_reset.scss";
 
 function App() {
+
   return (
     <>
-      <NavBar />
+      <Header />
     </>
   );
 }

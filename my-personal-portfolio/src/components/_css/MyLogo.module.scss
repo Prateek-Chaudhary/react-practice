@@ -1,15 +1,22 @@
 @mixin displayFlexIcon() {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .logoContainer {
   border: 2px solid greenyellow;
-  width: 18vw;
+  width: 25vw;
   @include displayFlexIcon();
 
   .logo {
+    margin-right: 8px;
+    @include displayFlexIcon();
+
+    & > img {
+      aspect-ratio: 1/1;
+      width: 3vw;
+    }
   }
 
   .myName {
@@ -24,6 +31,18 @@
       background-size: 200% 200%;
       background-position: var(--pos, 50%) 50%;
       transition: background-position 0.2s ease;
+
+      @media (max-width: 1024px) {
+        font-size: large;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 622px) {
+        font-size: 0.8rem;
+      }
     }
   }
 }

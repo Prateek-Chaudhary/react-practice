@@ -16,7 +16,7 @@ function MyLogo() {
   return (
     <div className={MyLogoCss.logoContainer}>
       <div className={MyLogoCss.logo}>
-        <img src={MyLogoIcon} alt="my logo" width={40} />
+        <img src={MyLogoIcon} alt="my logo" />
       </div>
       <div className={MyLogoCss.myName}>
         <label ref={myNameRef} onMouseMove={onMouseMove}>Prateek Chaudhary</label>
