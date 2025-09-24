@@ -1,11 +1,11 @@
-import Header from "./layouts/header/Header";
+import Home from "./pages/Home";
 import "./styles/_reset.scss";
 
 function App() {
 
   return (
     <>
-      <Header />
+      <Home />
     </>
   );
 }

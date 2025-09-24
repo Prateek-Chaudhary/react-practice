@@ -4,7 +4,7 @@ import HeaderCss from './Header.module.scss';
 
 function Header() {
   return (
-    <div>
+    <div className={HeaderCss.navBarContainerBox}>
       <NavBar />
     </div>
   );

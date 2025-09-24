@@ -5,9 +5,17 @@
 }
 
 .logoContainer {
-  border: 2px solid greenyellow;
+  // border: 2px solid greenyellow;
   width: 25vw;
   @include displayFlexIcon();
+
+  @media (max-width: 426px) {
+    width: 48vw;
+  }
+
+  @media (max-width: 375px) {
+    width: 54vw;
+  }
 
   .logo {
     margin-right: 8px;
@@ -15,7 +23,11 @@
 
     & > img {
       aspect-ratio: 1/1;
-      width: 3vw;
+      width: 2.7vw;
+
+      @media (max-width: 426px) {
+        width: 4.5vw;
+      }
     }
   }
 
@@ -42,6 +54,10 @@
 
       @media (max-width: 622px) {
         font-size: 0.8rem;
+      }
+
+      @media (max-width: 426px) {
+        font-size: 1rem;
       }
     }
   }

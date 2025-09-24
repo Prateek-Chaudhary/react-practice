@@ -6,7 +6,6 @@
 }
 
 .navBar {
-  border: 2px solid palevioletred;
   @include navFlex(center, space-between, row);
   background-color: white;
   padding: 0vh 3vw;
@@ -32,6 +31,18 @@
 
   @media (max-width: 768px) {
     width: 3%;
+  }
+
+  @media (max-width: 426px) {
+    width: 6%;
+  }
+
+  @media (max-width: 376px) {
+    width: 7%;
+  }
+
+  @media (max-width: 321px) {
+    width: 8%;
   }
 
   &::after {
@@ -66,6 +77,18 @@
 
       @media (max-width: 1024px) {
         width: 1.2vw;
+      }
+
+      @media (max-width: 426px) {
+        width: 2.6vw;
+      }
+
+      @media (max-width: 376px) {
+        width: 3vw;
+      }
+
+      @media (max-width: 321px) {
+        width: 3.2vw;
       }
     }
 
