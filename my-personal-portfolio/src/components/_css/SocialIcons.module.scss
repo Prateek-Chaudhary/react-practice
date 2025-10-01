@@ -1,0 +1,48 @@
+@mixin dynamicDisplay($display, $alignItem, $justifyContent) {
+  display: $display;
+  align-items: $alignItem;
+  justify-content: $justifyContent;
+}
+
+.icons {
+  @include dynamicDisplay(flex, center, start);
+  width: fit-content;
+
+  .socialIcon {
+    @include dynamicDisplay(flex, center, center);
+    border-radius: 50%;
+    position: relative;
+    aspect-ratio: 1/1;
+    width: 4.5vh;
+    margin: 1vh 0.5vw;
+    background-color: rgb(235, 235, 235);
+
+    .social {
+      z-index: 1;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: red;
+      transform: scale(0);
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      cursor: pointer;
+      .social {
+        color: white;
+      }
+    }
+
+    &:hover::before {
+      transform: scale(1);
+    }
+  }
+}

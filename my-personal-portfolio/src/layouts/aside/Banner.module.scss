@@ -1,6 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap");
 
+@mixin dynamicDisplay($display, $alignItem, $justifyContent) {
+  display: $display;
+  align-items: $alignItem;
+  justify-content: $justifyContent;
+}
 
 .bannerContainer {
-  border: 2px solid purple;
   height: 92vh;
+
+  .bannerDetails {
+    @include dynamicDisplay(flex, center, space-around);
+    height: 80vh;
+
+    .myBannerNameWithResume {
+      .myBannerName {
+        font-family: "Alan Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+
+        .myPronoun {
+          font-size: x-large;
+        }
+        .myFirstName {
+          line-height: 75px;
+          font-size: 5rem;
+        }
+        .myLastName {
+          line-height: 80px;
+          font-size: 5rem;
+        }
+      }
+
+      .myResumeBtnSection {
+        @include dynamicDisplay(flex, center, center);
+        margin-top: 5vh;
+        background-color: red;
+        color: white;
+        width: 23vh;
+        height: 5.5vh;
+        font-size: 1.35rem;
+        border-radius: 25px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgb(224, 0, 0);
+        }
+
+        & > label {
+          padding: 0vh 0.5vw;
+          font-family: "Alan Sans", sans-serif;
+          font-weight: 400;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .myBannerImage {
+      align-self: flex-end;
+    }
+
+    .myBannerAbout {
+      font-family: "Alan Sans", sans-serif;
+      font-weight: 400;
+      width: 28vw;
+      text-align: justify;
+
+      .aboutHeading {
+        font-size: large;
+        font-weight: 500;
+        margin-bottom: 1.5vh;
+      }
+
+      .aboutDetails {
+        color: rgb(64, 64, 64);
+      }
+
+      .SocialIcons {
+
+        .iconHeading {
+          margin: 2.5vh 0vw 1.5vh 0vw;
+        }
+      }
+    }
+  }
+
+  .designation {
+    @include dynamicDisplay(flex, center, center);
+    height: 11vh;
+    animation: moveUpDown 2.5s infinite alternate;
+
+    @keyframes moveUpDown {
+      from {
+        transform: translateY(7px);
+      }
+
+      to {
+        transform: translateY(-7px);
+      }
+    }
+
+    & > p {
+      font-size: 4rem;
+      color: red;
+      font-family: "Londrina Shadow", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      word-spacing: 5px;
+      letter-spacing: 5px;
+    }
+  }
 }
